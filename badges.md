@@ -1,16 +1,16 @@
 #### Codacy
 
-[![codacy](https://badgen.net/codacy/grade/f140537ac09146608fe3881940576534)](https://github.com/r37r0m0d3l/vicis-decorators)
+[![codacy](https://badgen.net/codacy/grade/5aaab54dcf3344bba9013e960595da2e)](https://github.com/r37r0m0d3l/vicis-decorators)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f140537ac09146608fe3881940576534)](https://www.codacy.com/manual/r37r0m0d3l/vicis-decorators?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=r37r0m0d3l/vicis-decorators&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5aaab54dcf3344bba9013e960595da2e)](https://www.codacy.com/manual/r37r0m0d3l/vicis-decorators?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=r37r0m0d3l/vicis-decorators&amp;utm_campaign=Badge_Grade)
 
 #### Code Climate
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/bbe1b7f80b00cfc1f335/maintainability)](https://codeclimate.com/github/r37r0m0d3l/vicis-decorators/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c8874149c8fa49c87cde/maintainability)](https://codeclimate.com/github/r37r0m0d3l/vicis-decorators/maintainability)
 
 #### DeepScan
 
-[![DeepScan grade](https://deepscan.io/api/teams/8453/projects/10652/branches/149677/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8453&pid=10652&bid=149677)
+[![DeepScan grade](https://deepscan.io/api/teams/8453/projects/10911/branches/156407/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=8453&pid=10911&bid=156407)
 
 #### Dependabot
 
