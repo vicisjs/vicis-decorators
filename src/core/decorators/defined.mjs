@@ -11,4 +11,5 @@ import { validateConfig } from "../functions/validateConfig";
 export function defined(instance, propertyName) {
   validateConfig(instance);
   instance[CONFIG]["defined"].push(propertyName);
+  instance[CONFIG]["pick"].push(propertyName);
 }

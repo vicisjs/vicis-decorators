@@ -34,6 +34,13 @@ export function serialize(configOfProperty) {
             }
           }
           break;
+        case "exclude":
+          {
+            if (propertyConfig[key] === true) {
+              instance[CONFIG][key].push(propertyName);
+            }
+          }
+          break;
         case "omit":
           {
             if (propertyConfig[key] === true) {
