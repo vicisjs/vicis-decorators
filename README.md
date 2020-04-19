@@ -2,7 +2,7 @@
 
 # Vicis Decorators
 
-Vicis decorators create serializable objects without a configuration.
+JavaScript's Vicis Decorators create serializable objects without a configuration.
 
 [📃 Vicis Documentation 📃](https://vicis.js.org)
 

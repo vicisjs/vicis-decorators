@@ -14,7 +14,7 @@
     "lodash.merge": "4.6.2",
     "vicis": "1.5.1"
   },
-  "description": "Vicis transformation plugin for date and time",
+  "description": "JavaScript's Vicis Decorators create serializable objects without a configuration.",
   "devDependencies": {
     "@babel/core": "7.9.0",
     "@babel/plugin-proposal-class-properties": "7.8.3",
