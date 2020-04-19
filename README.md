@@ -1,8 +1,8 @@
 ![Vicis](docs/_media/128.png?raw=true "Vicis")
 
-# Vicis Transform Date
+# Vicis Decorators
 
-Vicis transformation plugin for date and time.
+Vicis decorators create serializable objects without a configuration.
 
 [📃 Vicis Documentation 📃](https://vicis.js.org)
 
@@ -20,182 +20,181 @@ Vicis transformation plugin for date and time.
 Require CommonJS.
 
 ```javascript
-const { Vicis } = require("vicis");
-const { VicisTransformDate } = require("@vicis/decorators");
+const {
+  cast, defaults, defined, exclude, omit, rename,
+  replace, serializable, serialize, transform,
+} = require("@vicis/decorators");
 ```
 
 Import as ECMAScript module.
 
 ```javascript
-import { Vicis } from "vicis";
-import { VicisTransformDate } from "@vicis/decorators";
-```
-
-Export separately as functions.
-
-```javascript
-const {
-  VicisTransformDate,
-  toDateTime, toFormat, toHourMinSec, toISO,
-  toISO8601, toRFC2822, toUnix, toYearMonthDay,
-} = require("@vicis/decorators");
+import {
+  cast, defaults, defined, exclude, omit, rename,
+  replace, serializable, serialize, transform,
+} from "@vicis/decorators";
 ```
 
 ## API
 
-```javascript
-const serializer = Vicis.factory();
+### Serializable
 
-const model = { createdAt: new Date(), };
-serializer.data(model);
+```typescript
+@serializable({
+  pick: ["id", "login"]
+})
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+}
 ```
 
-### Default serializer behaviour
+### Serialize
 
-```javascript
-console.log(serializer.getData());
+[Serialize configuration ➡️ ](https://vicis.js.org/#/en/configuration_object)
+
+Any decorator that does not remove the property mark it as serializable.
+
+```typescript
+@serializable()
+class MyClass {
+  @serialize()
+  protected id: number | string;
+}
 ```
 
-```json
-{ "createdAt": "2020-06-15T12:30:45.290Z" }
+Passing string instead of object rename property.
+
+```typescript
+@serializable()
+class MyClass {
+  @serialize("ID")
+  protected id: number | string;
+}
 ```
 
-### toDateTime()
+You can use a configuration object.
 
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toDateTime(),
-});
+```typescript
+import { Vicis } from "vicis";
+@serializable()
+class MyClass {
+  @serialize({
+    cast: Vicis.INTEGER,
+    required: true,
+  })
+  protected id: number | string;
+}
 ```
 
-```json
-{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
+Or combine multiple decorators.
+
+```typescript
+import { Vicis } from "vicis";
+@serializable()
+class MyClass {
+  @required
+  @cast(Vicis.INTEGER)
+  protected id: number | string;
+}
 ```
 
-### toFormat()
+### Cast
 
-```javascript
-const format = "YYYY-MM-DD HH:mm:ss";
-serializer.transform({
-  createdAt: VicisTransformDate.toFormat(format),
-});
+[Cast ➡️ ](https://vicis.js.org/#/en/cast)
+
+```typescript
+import { Vicis } from "vicis";
+@serializable()
+class MyClass {
+  @cast(Vicis.INTEGER)
+  protected id: number | string;
+}
 ```
 
-```json
-{ "createdAt": "2020-06-15 12:30:45" }
+### Defaults
+
+[Defaults ➡️ ](https://vicis.js.org/#/en/defaults)
+
+```typescript
+@serializable()
+class MyClass {
+  @defaults(false)
+  protected active: any;
+}
 ```
 
-### toHourMinSec()
+### Defined
 
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toHourMinSec(),
-});
+[Defined ➡️ ](https://vicis.js.org/#/en/defined)
+
+```typescript
+@serializable()
+class MyClass {
+  @defined
+  protected email: string;
+}
 ```
 
-```json
-{ "createdAt": "12:30:45" }
+### Exclude
+
+[Exclude ➡️ ](https://vicis.js.org/#/en/exclude)
+
+```typescript
+@serializable()
+class MyClass {
+  @exclude
+  protected password: string;
+}
 ```
 
-### toISO()
+### Omit
 
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toISO(),
-});
+[Omit ➡️ ](https://vicis.js.org/#/en/omit)
+
+```typescript
+@serializable()
+class MyClass {
+  @omit
+  protected secret: string;
+}
 ```
 
-```json
-{ "createdAt": "2020-06-15T12:30:45.000Z" }
+### Rename
+
+[Rename ➡️ ](https://vicis.js.org/#/en/rename)
+
+```typescript
+@serializable()
+class MyClass {
+  @rename("firstName")
+  protected first_name: string;
+}
 ```
 
-### toISO8601()
+### Replace
 
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toISO8601(),
-});
+[Replace ➡️ ](https://vicis.js.org/#/en/replace)
+
+```typescript
+@serializable()
+class MyClass {
+  @replace("*****")
+  protected hasInformation: string;
+}
 ```
 
-```json
-{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
+### Transform
+
+[Transform ➡️ ](https://vicis.js.org/#/en/transform)
+
+```typescript
+@serializable()
+class MyClass {
+  @transform((text) => text.toUpperCase())
+  protected abbreviation: string;
+}
 ```
-
-### toRFC2822()
-
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toRFC2822(),
-});
-```
-
-```json
-{ "createdAt": "Mon, 15 Jun 2020 12:30:45 GMT" }
-```
-
-### toUnix()
-
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toUnix(),
-});
-```
-
-```json
-{ "createdAt": 1592224245000 }
-```
-
-### toYearMonthDay()
-
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate.toYearMonthDay(),
-});
-```
-
-```json
-{ "createdAt": "2020-06-15" }
-```
-
-### toDateTime() with configuration
-
-Priority: unixTimestamp, format, anything else for iso formatting.
-
-```javascript
-const config = {
-  format: undefined,
-  keepLocalTime: true,
-  keepOffset: true,
-  unixTimestamp: false,
-  utcOffset: undefined,
-};
-serializer.transform({
-  createdAt: VicisTransformDate.toDateTime(config),
-});
-```
-
-```json
-{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
-```
-
-## ⚠ For test purposes only ⚠
-
-If you are 💯 sure that you have correct dates and UTC offsets.
-
-```javascript
-serializer.transform({
-  createdAt: VicisTransformDate,
-});
-```
-
-```json
-{ "createdAt": "2020-06-15T12:30:45.000+00:00" }
-```
-
----
-
-*If you use this project don't forget to give a ⭐
-[star](https://github.com/r37r0m0d3l/vicis) ⭐ to it on GitHub!*
 
 ---
 

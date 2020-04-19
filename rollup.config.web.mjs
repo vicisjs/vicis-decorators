@@ -13,7 +13,11 @@ export default {
     {
       file: `./dist/${OUTPUT_NAME}.js`,
       format: "umd",
-      globals: { vicis: "vicis" },
+      globals: {
+        "lodash.clonedeep": "lodash.clonedeep",
+        "lodash.merge": "lodash.merge",
+        "vicis": "vicis",
+      },
       name: UMD_NAME,
       sourcemap: true,
     },
@@ -32,5 +36,5 @@ export default {
       warnings: true,
     }),
   ],
-  external: ["vicis"],
+  external: ["lodash.clonedeep", "lodash.merge", "vicis"],
 };

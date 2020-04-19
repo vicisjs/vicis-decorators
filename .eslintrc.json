@@ -1,24 +1,46 @@
 {
   "env": {
+    "browser": true,
     "commonjs": true,
     "es6": true,
     "node": true
   },
   "extends": ["plugin:prettier/recommended", "eslint:recommended"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
+  "globals": {},
   "parser": "babel-eslint",
   "parserOptions": {
     "allowImportExportEverywhere": true,
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "jsdoc"],
   "rules": {
     "eqeqeq": ["error", "always"],
-    "id-length": ["error", { "exceptions": ["x", "y", "z"], "min": 2, "properties": "never" }],
+    "id-length": [
+      "error",
+      {
+        "exceptions": ["x", "y", "z"],
+        "min": 2,
+        "properties": "never"
+      }
+    ],
+    "jsdoc/check-alignment": 1,
+    "jsdoc/check-param-names": 1,
+    "jsdoc/check-tag-names": 1,
+    "jsdoc/check-types": 1,
+    "jsdoc/implements-on-classes": 1,
+    "jsdoc/newline-after-description": 0,
+    "jsdoc/no-undefined-types": 1,
+    "jsdoc/require-jsdoc": 1,
+    "jsdoc/require-param": 1,
+    "jsdoc/require-param-description": 0,
+    "jsdoc/require-param-name": 1,
+    "jsdoc/require-param-type": 1,
+    "jsdoc/require-returns": 1,
+    "jsdoc/require-returns-check": 1,
+    "jsdoc/require-returns-description": 0,
+    "jsdoc/require-returns-type": 1,
+    "jsdoc/valid-types": 1,
     "linebreak-style": ["error", "unix"],
     "no-console": "warn",
     "no-implicit-coercion": "error",
@@ -26,7 +48,14 @@
     "no-param-reassign": "error",
     "no-ternary": "warn",
     "prettier/prettier": "error",
-    "quotes": ["error", "double", { "allowTemplateLiterals": true, "avoidEscape": true }],
+    "quotes": [
+      "error",
+      "double",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
     "semi": ["error", "always"],
     "yoda": "error"
   }

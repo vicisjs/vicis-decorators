@@ -34,5 +34,5 @@ export default {
       warnings: true,
     }),
   ],
-  external: ["vicis"],
+  external: ["lodash.clonedeep", "lodash.merge", "vicis"],
 };
