@@ -39,6 +39,8 @@ import {
 
 ### Serializable
 
+[Configuration 🡆](https://vicis.js.org/#/en/configuration_object)
+
 ```typescript
 @serializable({
   pick: ["id", "login"]
@@ -51,7 +53,7 @@ class MyClass {
 
 ### Serialize
 
-[Serialize configuration ➡️ ](https://vicis.js.org/#/en/configuration_object)
+[Serialize configuration 🡆](https://vicis.js.org/#/en/configuration_object)
 
 Any decorator that does not remove the property mark it as serializable.
 
@@ -101,7 +103,7 @@ class MyClass {
 
 ### Cast
 
-[Cast ➡️ ](https://vicis.js.org/#/en/cast)
+[Cast 🡆](https://vicis.js.org/#/en/cast)
 
 ```typescript
 import { Vicis } from "vicis";
@@ -114,7 +116,7 @@ class MyClass {
 
 ### Defaults
 
-[Defaults ➡️ ](https://vicis.js.org/#/en/defaults)
+[Defaults 🡆](https://vicis.js.org/#/en/defaults)
 
 ```typescript
 @serializable()
@@ -126,7 +128,7 @@ class MyClass {
 
 ### Defined
 
-[Defined ➡️ ](https://vicis.js.org/#/en/defined)
+[Defined 🡆](https://vicis.js.org/#/en/defined)
 
 ```typescript
 @serializable()
@@ -138,7 +140,7 @@ class MyClass {
 
 ### Exclude
 
-[Exclude ➡️ ](https://vicis.js.org/#/en/exclude)
+[Exclude 🡆](https://vicis.js.org/#/en/exclude)
 
 ```typescript
 @serializable()
@@ -150,7 +152,7 @@ class MyClass {
 
 ### Omit
 
-[Omit ➡️ ](https://vicis.js.org/#/en/omit)
+[Omit 🡆](https://vicis.js.org/#/en/omit)
 
 ```typescript
 @serializable()
@@ -162,7 +164,7 @@ class MyClass {
 
 ### Rename
 
-[Rename ➡️ ](https://vicis.js.org/#/en/rename)
+[Rename 🡆](https://vicis.js.org/#/en/rename)
 
 ```typescript
 @serializable()
@@ -174,7 +176,7 @@ class MyClass {
 
 ### Replace
 
-[Replace ➡️ ](https://vicis.js.org/#/en/replace)
+[Replace 🡆](https://vicis.js.org/#/en/replace)
 
 ```typescript
 @serializable()
@@ -186,7 +188,7 @@ class MyClass {
 
 ### Transform
 
-[Transform ➡️ ](https://vicis.js.org/#/en/transform)
+[Transform 🡆](https://vicis.js.org/#/en/transform)
 
 ```typescript
 @serializable()
