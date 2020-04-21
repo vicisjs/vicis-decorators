@@ -13,6 +13,8 @@ export function toJSON() {
     asJSON[propertyName] = this[propertyName];
   });
   const serializedData = this[SERIALIZER].data(asJSON).getData();
-  this[SERIALIZER].clear();
+  (async () => {
+    this[SERIALIZER].clear();
+  })();
   return serializedData;
 }
