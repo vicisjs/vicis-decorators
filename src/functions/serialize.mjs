@@ -22,7 +22,7 @@ export function serialize(configOfProperty) {
   return function (instance, propertyName /*, descriptor*/) {
     validate(instance);
     const hasConfig = Object.keys(propertyConfig).length > 0;
-    if (hasConfig) {
+    if (!hasConfig) {
       instance[CONFIG].pick.push(propertyName);
     }
     Object.keys(propertyConfig).forEach((key) => {

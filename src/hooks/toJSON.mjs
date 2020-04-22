@@ -12,7 +12,7 @@ export function toJSON() {
   propertiesToSerialize.forEach((propertyName) => {
     asJSON[propertyName] = this[propertyName];
   });
-  const serializedData = this[SERIALIZER].data(asJSON).getData();
+  const serializedData = this[SERIALIZER].config(this[CONFIG]).data(asJSON).getData();
   (async () => {
     this[SERIALIZER].clear();
   })();

@@ -20,6 +20,9 @@ export function Serialize(config = {}) {
    * @returns {object}
    */
   return function (target) {
+    if (!Object.is(target.prototype.toJSON, toJSON)) {
+      target.prototype.toJSON = toJSON;
+    }
     if (CONFIG in target.prototype) {
       target.prototype[CONFIG] = merge(clone(target.prototype[CONFIG]), clone(config || {}));
     } else {
@@ -28,7 +31,6 @@ export function Serialize(config = {}) {
       const setConfig = merge(mergedConfig, protoConfig);
       target.prototype[CONFIG] = setConfig;
       target.prototype[SERIALIZER] = Vicis.factory(setConfig);
-      target.prototype.toJSON = toJSON;
     }
     return target;
   };
