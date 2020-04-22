@@ -21,6 +21,7 @@ Require CommonJS.
 
 ```javascript
 const {
+  Defaults, Exclude, Omit, Order, Pick, Required, Serialize,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
 } = require("@vicis/decorators");
@@ -30,19 +31,20 @@ Import as ECMAScript module.
 
 ```javascript
 import {
+  Defaults, Exclude, Omit, Order, Pick, Required, Serialize,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
 } from "@vicis/decorators";
 ```
 
-## API
+## Classes
 
-### Serializable
+### Serialize
 
-[Configuration 🡆](https://vicis.js.org/#/en/configuration_object)
+[Configuration](https://vicis.js.org/#/en/configuration_object)
 
 ```typescript
-@serializable({
+@Serialize({
   pick: ["id", "login"]
 })
 class MyClass {
@@ -51,14 +53,142 @@ class MyClass {
 }
 ```
 
-### Serialize
+### Defaults
 
-[Serialize configuration 🡆](https://vicis.js.org/#/en/configuration_object)
+[Defaults →](https://vicis.js.org/#/en/defaults)
+
+```typescript
+@Defaults({ active: false })
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+}
+```
+
+### Exclude
+
+[Exclude →](https://vicis.js.org/#/en/exclude)
+
+```typescript
+@Exclude(["password", "email", /^(?:_)(?:_)?/])
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+  protected password: string;
+  protected email: string;
+}
+```
+
+```typescript
+@Exclude("password", "email", /^(?:_)(?:_)?/)
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+  protected password: string;
+  protected email: string;
+}
+```
+
+### Omit
+
+[Omit →](https://vicis.js.org/#/en/omit)
+
+```typescript
+@Omit(["password", "email"])
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+  protected password: string;
+  protected email: string;
+}
+```
+
+```typescript
+@Omit("password", "email")
+class MyClass {
+  protected id: number | string;
+  protected login: string;
+  protected password: string;
+  protected email: string;
+}
+```
+
+### Order
+
+[Order →](https://vicis.js.org/#/en/order)
+
+```typescript
+@Order(["id", "login", "name"])
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+```typescript
+@Order("id", "login", "name")
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+### Pick
+
+[Pick →](https://vicis.js.org/#/en/pick)
+
+```typescript
+@Pick(["id", "name"])
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+```typescript
+@Pick("id", "name")
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+### Required
+
+[Required →](https://vicis.js.org/#/en/required)
+
+```typescript
+@Required(["id", "login"])
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+```typescript
+@Required("id", "login")
+class MyClass {
+  protected id: number | string;
+  protected name: string;
+  protected login: string;
+}
+```
+
+## Properties
+
+### serialize
+
+[Serialize configuration →](https://vicis.js.org/#/en/configuration_object)
 
 Any decorator that does not remove the property mark it as serializable.
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @serialize()
   protected id: number | string;
@@ -68,7 +198,7 @@ class MyClass {
 Passing string instead of object rename property.
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @serialize("ID")
   protected id: number | string;
@@ -79,7 +209,7 @@ You can use a configuration object.
 
 ```typescript
 import { Vicis } from "vicis";
-@serializable()
+@Serialize()
 class MyClass {
   @serialize({
     cast: Vicis.INTEGER,
@@ -93,7 +223,7 @@ Or combine multiple decorators.
 
 ```typescript
 import { Vicis } from "vicis";
-@serializable()
+@Serialize()
 class MyClass {
   @required
   @cast(Vicis.INTEGER)
@@ -101,97 +231,121 @@ class MyClass {
 }
 ```
 
-### Cast
+### cast
 
-[Cast 🡆](https://vicis.js.org/#/en/cast)
+[Cast →](https://vicis.js.org/#/en/cast)
 
 ```typescript
 import { Vicis } from "vicis";
-@serializable()
+@Serialize()
 class MyClass {
   @cast(Vicis.INTEGER)
   protected id: number | string;
 }
 ```
 
-### Defaults
+### defaults
 
-[Defaults 🡆](https://vicis.js.org/#/en/defaults)
+[Defaults →](https://vicis.js.org/#/en/defaults)
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @defaults(false)
   protected active: any;
 }
 ```
 
-### Defined
+### defined
 
-[Defined 🡆](https://vicis.js.org/#/en/defined)
+[Defined →](https://vicis.js.org/#/en/defined)
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @defined
   protected email: string;
 }
 ```
 
-### Exclude
+### exclude
 
-[Exclude 🡆](https://vicis.js.org/#/en/exclude)
+[Exclude →](https://vicis.js.org/#/en/exclude)
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @exclude
   protected password: string;
 }
 ```
 
-### Omit
+### omit
 
-[Omit 🡆](https://vicis.js.org/#/en/omit)
+[Omit →](https://vicis.js.org/#/en/omit)
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @omit
   protected secret: string;
 }
 ```
 
-### Rename
+### pick
 
-[Rename 🡆](https://vicis.js.org/#/en/rename)
+[Pick →](https://vicis.js.org/#/en/pick)
 
 ```typescript
-@serializable()
+@Serialize()
+class MyClass {
+  @pick
+  protected id: number | string;
+}
+```
+
+### rename
+
+[Rename →](https://vicis.js.org/#/en/rename)
+
+```typescript
+@Serialize()
 class MyClass {
   @rename("firstName")
   protected first_name: string;
 }
 ```
 
-### Replace
+### replace
 
-[Replace 🡆](https://vicis.js.org/#/en/replace)
+[Replace →](https://vicis.js.org/#/en/replace)
 
 ```typescript
-@serializable()
+@Serialize()
 class MyClass {
   @replace("*****")
   protected hasInformation: string;
 }
 ```
 
-### Transform
+### required
 
-[Transform 🡆](https://vicis.js.org/#/en/transform)
+[Required →](https://vicis.js.org/#/en/required)
 
 ```typescript
-@serializable()
+@Serialize()
+class MyClass {
+  @required
+  protected id: number | string;
+}
+```
+
+### transform
+
+[Transform →](https://vicis.js.org/#/en/transform)
+
+```typescript
+@Serialize()
 class MyClass {
   @transform((text) => text.toUpperCase())
   protected abbreviation: string;

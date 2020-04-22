@@ -13,6 +13,56 @@ export interface IVicisConfigProperty {
 }
 
 /**
+ * @name Defaults
+ * @description In case of property has undefined value it will be replaced with value from configuration.
+ * @param {Object.<string, any>=} propertyDefaultValues
+ * @returns {Function}
+ */
+export function Defaults(propertyDefaultValues?): Function;
+/**
+ * @name Exclude
+ * @description Remove from object listed properties.
+ * @param {Array.<string|RegExp>=} propertiesToExclude
+ * @returns {Function}
+ */
+export function Exclude(propertiesToExclude?): Function;
+/**
+ * @name Omit
+ * @description Remove from object listed properties.
+ * @param {Array.<string>=} propertiesToOmit
+ * @returns {Function}
+ */
+export function Omit(propertiesToOmit?): Function;
+/**
+ * @name Order
+ * @description Set order of object property names.
+ * @param {Array.<string>=} propertiesToStreamline
+ * @returns {Function}
+ */
+export function Order(propertiesToStreamline?): Function;
+/**
+ * @name Pick
+ * @description Mark property or getter as serializable.
+ * @param {Array.<string>=} propertiesToPick
+ * @returns {Function}
+ */
+export function Pick(propertiesToPick?): Function;
+/**
+ * @name Required
+ * @description If property defined in object - no error thrown.
+ * @param {Array.<string>=} propertiesRequired
+ * @returns {Function}
+ */
+export function Required(propertiesRequired?): Function;
+/**
+ * @name Serialize
+ * @description Make class ready for serialization.
+ * @param {object=} config
+ * @returns {Function}
+ */
+export function Serialize(config?: IVicisConfig): Function;
+
+/**
  * @name cast
  * @description Typecast object value to BOOLEAN, NUMERIC, INTEGER, STRING, JSON
  * @param {string} to
@@ -51,6 +101,12 @@ export function exclude(target: Object, propertyKey: string): any;
  */
 export function omit(target: Object, propertyKey: string): any;
 /**
+ * @name pick
+ * @description Mark property or getter as serializable.
+ * @returns {Function}
+ */
+export function pick(): Function;
+/**
  * @name rename
  * @description Rename property to another name and remove original.
  * @param {string} name
@@ -65,12 +121,13 @@ export function rename(name: string): Function;
  */
 export function replace(value: any): Function;
 /**
- * @name serializable
- * @description Make class ready for serialization.
- * @param {object} config
- * @returns {Function}
+ * @name required
+ * @description If property defined in object - no error thrown.
+ * @param {object} instance
+ * @param {string} propertyName
+ * @returns {void}
  */
-export function serializable(config?: IVicisConfig | string): Function;
+export function required(target: Object, propertyKey: string): any;
 /**
  * @name serialize
  * @description Mark property or getter as serializable.

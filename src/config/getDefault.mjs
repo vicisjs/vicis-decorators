@@ -1,4 +1,4 @@
-import { clone } from "../../util/clone";
+import { clone } from "../utils/clone";
 
 const vicisConfigDefault = {
   cast: {},
@@ -16,10 +16,10 @@ const vicisConfigDefault = {
 };
 
 /**
- * @name getDefaultConfig
+ * @name getDefault
  * @description Get default Vicis configuration.
  * @returns {any}
  */
-export function getDefaultConfig() {
+export function getDefault() {
   return clone(vicisConfigDefault);
 }

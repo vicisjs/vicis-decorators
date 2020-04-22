@@ -28,7 +28,7 @@ export default {
     commonjs(),
     rollupPluginTerser.terser({
       keep_classnames: false,
-      keep_fnames: true,
+      keep_fnames: false,
       output: {
         comments: false,
       },

@@ -1,5 +1,6 @@
-import { CONFIG } from "../../const/config";
-import { validateConfig } from "../functions/validateConfig";
+import { CONFIG } from "../const/config";
+
+import { validate } from "../config/validate";
 
 /**
  * @name omit
@@ -9,6 +10,6 @@ import { validateConfig } from "../functions/validateConfig";
  * @returns {void}
  */
 export function omit(instance, propertyName) {
-  validateConfig(instance);
+  validate(instance);
   instance[CONFIG]["omit"].push(propertyName);
 }

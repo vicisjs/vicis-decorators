@@ -1,5 +1,6 @@
-import { CONFIG } from "../../const/config";
-import { validateConfig } from "../functions/validateConfig";
+import { CONFIG } from "../const/config";
+
+import { validate } from "../config/validate";
 
 /**
  * @name defined
@@ -9,7 +10,7 @@ import { validateConfig } from "../functions/validateConfig";
  * @returns {void}
  */
 export function defined(instance, propertyName) {
-  validateConfig(instance);
+  validate(instance);
   instance[CONFIG]["defined"].push(propertyName);
   instance[CONFIG]["pick"].push(propertyName);
 }

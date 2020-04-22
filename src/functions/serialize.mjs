@@ -1,6 +1,6 @@
-import { CONFIG } from "../../const/config";
+import { CONFIG } from "../const/config";
 
-import { validateConfig } from "../functions/validateConfig";
+import { validate } from "../config/validate";
 
 /**
  * @name serialize
@@ -20,7 +20,7 @@ export function serialize(configOfProperty) {
    * @param {string} propertyName
    */
   return function (instance, propertyName /*, descriptor*/) {
-    validateConfig(instance);
+    validate(instance);
     const hasConfig = Object.keys(propertyConfig).length > 0;
     if (hasConfig) {
       instance[CONFIG].pick.push(propertyName);
