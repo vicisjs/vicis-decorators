@@ -52,6 +52,7 @@ export function serialize(configOfProperty) {
           {
             instance[CONFIG][key][propertyName] = propertyConfig.rename;
             instance[CONFIG]["pick"].push(propertyConfig.rename);
+            instance[CONFIG]["pick"].push(propertyName);
           }
           break;
         case "required":
