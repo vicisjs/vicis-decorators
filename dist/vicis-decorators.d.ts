@@ -18,42 +18,50 @@ export interface IVicisConfigProperty {
  * @param {Object.<string, any>=} propertyDefaultValues
  * @returns {Function}
  */
-export function Defaults(propertyDefaultValues?): Function;
+export function Defaults(propertyDefaultValues?: { [key: string]: any }): Function;
 /**
  * @name Exclude
  * @description Remove from object listed properties.
  * @param {Array.<string|RegExp>=} propertiesToExclude
+ * @param {...string|RegExp} exclude
  * @returns {Function}
  */
-export function Exclude(propertiesToExclude?): Function;
+export function Exclude(
+  propertiesToExclude: string | RegExp | Array<string | RegExp>,
+  ...exclude: Array<string | RegExp>
+): Function;
 /**
  * @name Omit
  * @description Remove from object listed properties.
- * @param {Array.<string>=} propertiesToOmit
+ * @param {Array.<string>|string=} propertiesToOmit
+ * @param {...string} omit
  * @returns {Function}
  */
-export function Omit(propertiesToOmit?): Function;
+export function Omit(propertiesToOmit?: string | string[], ...omit: string[]): Function;
 /**
  * @name Order
  * @description Set order of object property names.
- * @param {Array.<string>=} propertiesToStreamline
+ * @param {Array.<string>|string=} propertiesToStreamline
+ * @param {...string} order
  * @returns {Function}
  */
-export function Order(propertiesToStreamline?): Function;
+export function Order(propertiesToStreamline?: string | string[], ...order: string[]): Function;
 /**
  * @name Pick
  * @description Mark property or getter as serializable.
- * @param {Array.<string>=} propertiesToPick
+ * @param {Array.<string>|string=} propertiesToPick
+ * @param {...string} pick
  * @returns {Function}
  */
-export function Pick(propertiesToPick?): Function;
+export function Pick(propertiesToPick?: string | string[], ...pick: string[]): Function;
 /**
  * @name Required
  * @description If property defined in object - no error thrown.
- * @param {Array.<string>=} propertiesRequired
+ * @param {Array.<string>|string=} propertiesRequired
+ * @param {...string} required
  * @returns {Function}
  */
-export function Required(propertiesRequired?): Function;
+export function Required(propertiesRequired?: string | string[], ...pick: string[]): Function;
 /**
  * @name Serialize
  * @description Make class ready for serialization.
