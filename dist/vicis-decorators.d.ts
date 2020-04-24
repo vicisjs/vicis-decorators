@@ -61,7 +61,7 @@ export function Pick(propertiesToPick?: string | string[], ...pick: string[]): F
  * @param {...string} required
  * @returns {Function}
  */
-export function Required(propertiesRequired?: string | string[], ...pick: string[]): Function;
+export function Required(propertiesRequired?: string | string[], ...required: string[]): Function;
 /**
  * @name Serialize
  * @description Make class ready for serialization.
@@ -91,7 +91,7 @@ export function defaults(value: any): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function defined(target: Object, propertyKey: string): any;
+export function defined(instance: Object, propertyName: string): any;
 /**
  * @name exclude
  * @description Remove from object listed property.
@@ -99,7 +99,7 @@ export function defined(target: Object, propertyKey: string): any;
  * @param {string} propertyName
  * @returns {void}
  */
-export function exclude(target: Object, propertyKey: string): any;
+export function exclude(instance: Object, propertyName: string): any;
 /**
  * @name omit
  * @description Remove property from object. Applies before all other transformations.
@@ -107,13 +107,13 @@ export function exclude(target: Object, propertyKey: string): any;
  * @param {string} propertyName
  * @returns {void}
  */
-export function omit(target: Object, propertyKey: string): any;
+export function omit(instance: Object, propertyName: string): any;
 /**
  * @name pick
  * @description Mark property or getter as serializable.
  * @returns {Function}
  */
-export function pick(): Function;
+export function pick(instance: Object, propertyName: string): any;
 /**
  * @name rename
  * @description Rename property to another name and remove original.
@@ -135,7 +135,7 @@ export function replace(value: any): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function required(target: Object, propertyKey: string): any;
+export function required(instance: Object, propertyName: string): any;
 /**
  * @name serialize
  * @description Mark property or getter as serializable.
