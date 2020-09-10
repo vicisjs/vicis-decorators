@@ -91,7 +91,7 @@ export function defaults(value: unknown): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function defined(instance: Object, propertyName: string): unknown;
+export function defined(instance: Object, propertyName: string): any;
 /**
  * @name exclude
  * @description Remove from object listed property.
@@ -99,7 +99,7 @@ export function defined(instance: Object, propertyName: string): unknown;
  * @param {string} propertyName
  * @returns {void}
  */
-export function exclude(instance: Object, propertyName: string): unknown;
+export function exclude(instance: Object, propertyName: string): any;
 /**
  * @name omit
  * @description Remove property from object. Applies before all other transformations.
@@ -107,13 +107,13 @@ export function exclude(instance: Object, propertyName: string): unknown;
  * @param {string} propertyName
  * @returns {void}
  */
-export function omit(instance: Object, propertyName: string): unknown;
+export function omit(instance: Object, propertyName: string): any;
 /**
  * @name pick
  * @description Mark property or getter as serializable.
  * @returns {Function}
  */
-export function pick(instance: Object, propertyName: string): unknown;
+export function pick(instance: Object, propertyName: string): any;
 /**
  * @name rename
  * @description Rename property to another name and remove original.
@@ -135,7 +135,7 @@ export function replace(value: unknown): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function required(instance: Object, propertyName: string): unknown;
+export function required(instance: Object, propertyName: string): any;
 /**
  * @name serialize
  * @description Mark property or getter as serializable.
