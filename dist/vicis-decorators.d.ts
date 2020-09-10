@@ -18,7 +18,7 @@ export interface IConfigProperty {
  * @param {Object.<string, *>=} propertyDefaultValues
  * @returns {Function}
  */
-export function Defaults(propertyDefaultValues?: Record<string, unknown>): Function;
+export function Defaults(propertyDefaultValues?: Record<string, unknown>): (...args: unknown[]) => unknown;
 /**
  * @name Exclude
  * @description Remove from object listed properties.
@@ -37,7 +37,7 @@ export function Exclude(
  * @param {...string} omit
  * @returns {Function}
  */
-export function Omit(propertiesToOmit?: string | string[], ...omit: string[]): Function;
+export function Omit(propertiesToOmit?: string | string[], ...omit: string[]): (...args: unknown[]) => unknown;
 /**
  * @name Order
  * @description Set order of object property names.
@@ -45,7 +45,7 @@ export function Omit(propertiesToOmit?: string | string[], ...omit: string[]): F
  * @param {...string} order
  * @returns {Function}
  */
-export function Order(propertiesToStreamline?: string | string[], ...order: string[]): Function;
+export function Order(propertiesToStreamline?: string | string[], ...order: string[]): (...args: unknown[]) => unknown;
 /**
  * @name Pick
  * @description Mark property or getter as serializable.
@@ -53,7 +53,7 @@ export function Order(propertiesToStreamline?: string | string[], ...order: stri
  * @param {...string} pick
  * @returns {Function}
  */
-export function Pick(propertiesToPick?: string | string[], ...pick: string[]): Function;
+export function Pick(propertiesToPick?: string | string[], ...pick: string[]): (...args: unknown[]) => unknown;
 /**
  * @name Required
  * @description If property defined in object - no error thrown.
@@ -61,14 +61,17 @@ export function Pick(propertiesToPick?: string | string[], ...pick: string[]): F
  * @param {...string} required
  * @returns {Function}
  */
-export function Required(propertiesRequired?: string | string[], ...required: string[]): Function;
+export function Required(
+  propertiesRequired?: string | string[],
+  ...required: string[]
+): (...args: unknown[]) => unknown;
 /**
  * @name Serialize
  * @description Make class ready for serialization.
  * @param {object=} config
  * @returns {Function}
  */
-export function Serialize(config?: IConfig): Function;
+export function Serialize(config?: IConfig): (...args: unknown[]) => unknown;
 
 /**
  * @name cast
@@ -76,14 +79,14 @@ export function Serialize(config?: IConfig): Function;
  * @param {string} to
  * @returns {Function}
  */
-export function cast(to: string | ECastType): Function;
+export function cast(to: string | ECastType): (...args: unknown[]) => unknown;
 /**
  * @name defaults
  * @description In case of property has undefined value it will be replaced with value from configuration
  * @param {*} value
  * @returns {Function}
  */
-export function defaults(value: unknown): Function;
+export function defaults(value: unknown): (...args: unknown[]) => unknown;
 /**
  * @name defined
  * @description If value is defined in object - no error thrown.
@@ -120,14 +123,14 @@ export function pick(instance: Object, propertyName: string): any;
  * @param {string} name
  * @returns {Function}
  */
-export function rename(name: string): Function;
+export function rename(name: string): (...args: unknown[]) => unknown;
 /**
  * @name replace
  * @description Overrides object value.
  * @param {*} value
  * @returns {Function}
  */
-export function replace(value: unknown): Function;
+export function replace(value: unknown): (...args: unknown[]) => unknown;
 /**
  * @name required
  * @description If property defined in object - no error thrown.
@@ -142,11 +145,13 @@ export function required(instance: Object, propertyName: string): any;
  * @param {object|string=} configOfProperty
  * @returns {Function}
  */
-export function serialize(configOfProperty?: IConfigProperty | string): Function;
+export function serialize(configOfProperty?: IConfigProperty | string): (...args: unknown[]) => unknown;
 /**
  * @name transform
  * @description Transform property value with function.
  * @param {Function} transformer
  * @returns {Function}
  */
-export function transform(transformer: (value: unknown, key?: string, data?: Record<string, unknown>) => unknown): Function;
+export function transform(
+  transformer: (value: unknown, key?: string, data?: Record<string, unknown>) => unknown,
+): (...args: unknown[]) => unknown;
