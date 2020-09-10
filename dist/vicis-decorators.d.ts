@@ -1,7 +1,7 @@
-import { IVicisConfig, TYPES_ENUM } from "vicis";
+import { IVicisConfig, CAST_TYPE } from "vicis";
 
 export interface IVicisConfigProperty {
-  cast?: TYPES_ENUM;
+  cast?: CAST_TYPE;
   defaults?: any;
   defined?: boolean;
   exclude?: boolean;
@@ -76,11 +76,11 @@ export function Serialize(config?: IVicisConfig): Function;
  * @param {string} to
  * @returns {Function}
  */
-export function cast(to: TYPES_ENUM): Function;
+export function cast(to: CAST_TYPE): Function;
 /**
  * @name defaults
  * @description In case of property has undefined value it will be replaced with value from configuration
- * @param {any} value
+ * @param {*} value
  * @returns {Function}
  */
 export function defaults(value: any): Function;
@@ -124,7 +124,7 @@ export function rename(name: string): Function;
 /**
  * @name replace
  * @description Overrides object value.
- * @param {any} value
+ * @param {*} value
  * @returns {Function}
  */
 export function replace(value: any): Function;
