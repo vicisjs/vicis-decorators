@@ -1,24 +1,24 @@
-import { IVicisConfig, CAST_TYPE } from "vicis";
+import { IConfig, ECastType } from "vicis";
 
-export interface IVicisConfigProperty {
-  cast?: CAST_TYPE;
-  defaults?: any;
+export interface IConfigProperty {
+  cast?: string | ECastType;
+  defaults?: unknown;
   defined?: boolean;
   exclude?: boolean;
   omit?: boolean;
   rename?: string;
-  replace?: any;
+  replace?: unknown;
   required?: boolean;
-  transform?: (value: any, key: string, data: object) => any;
+  transform?: (value: unknown, key?: string, data?: Record<string, unknown>) => unknown;
 }
 
 /**
  * @name Defaults
  * @description In case of property has undefined value it will be replaced with value from configuration.
- * @param {Object.<string, any>=} propertyDefaultValues
+ * @param {Object.<string, *>=} propertyDefaultValues
  * @returns {Function}
  */
-export function Defaults(propertyDefaultValues?: { [key: string]: any }): Function;
+export function Defaults(propertyDefaultValues?: Record<string, unknown>): Function;
 /**
  * @name Exclude
  * @description Remove from object listed properties.
@@ -68,7 +68,7 @@ export function Required(propertiesRequired?: string | string[], ...required: st
  * @param {object=} config
  * @returns {Function}
  */
-export function Serialize(config?: IVicisConfig): Function;
+export function Serialize(config?: IConfig): Function;
 
 /**
  * @name cast
@@ -76,14 +76,14 @@ export function Serialize(config?: IVicisConfig): Function;
  * @param {string} to
  * @returns {Function}
  */
-export function cast(to: CAST_TYPE): Function;
+export function cast(to: string | ECastType): Function;
 /**
  * @name defaults
  * @description In case of property has undefined value it will be replaced with value from configuration
  * @param {*} value
  * @returns {Function}
  */
-export function defaults(value: any): Function;
+export function defaults(value: unknown): Function;
 /**
  * @name defined
  * @description If value is defined in object - no error thrown.
@@ -91,7 +91,7 @@ export function defaults(value: any): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function defined(instance: Object, propertyName: string): any;
+export function defined(instance: Object, propertyName: string): unknown;
 /**
  * @name exclude
  * @description Remove from object listed property.
@@ -99,7 +99,7 @@ export function defined(instance: Object, propertyName: string): any;
  * @param {string} propertyName
  * @returns {void}
  */
-export function exclude(instance: Object, propertyName: string): any;
+export function exclude(instance: Object, propertyName: string): unknown;
 /**
  * @name omit
  * @description Remove property from object. Applies before all other transformations.
@@ -107,13 +107,13 @@ export function exclude(instance: Object, propertyName: string): any;
  * @param {string} propertyName
  * @returns {void}
  */
-export function omit(instance: Object, propertyName: string): any;
+export function omit(instance: Object, propertyName: string): unknown;
 /**
  * @name pick
  * @description Mark property or getter as serializable.
  * @returns {Function}
  */
-export function pick(instance: Object, propertyName: string): any;
+export function pick(instance: Object, propertyName: string): unknown;
 /**
  * @name rename
  * @description Rename property to another name and remove original.
@@ -127,7 +127,7 @@ export function rename(name: string): Function;
  * @param {*} value
  * @returns {Function}
  */
-export function replace(value: any): Function;
+export function replace(value: unknown): Function;
 /**
  * @name required
  * @description If property defined in object - no error thrown.
@@ -135,18 +135,18 @@ export function replace(value: any): Function;
  * @param {string} propertyName
  * @returns {void}
  */
-export function required(instance: Object, propertyName: string): any;
+export function required(instance: Object, propertyName: string): unknown;
 /**
  * @name serialize
  * @description Mark property or getter as serializable.
  * @param {object|string=} configOfProperty
  * @returns {Function}
  */
-export function serialize(configOfProperty?: IVicisConfigProperty | string): Function;
+export function serialize(configOfProperty?: IConfigProperty | string): Function;
 /**
  * @name transform
  * @description Transform property value with function.
  * @param {Function} transformer
  * @returns {Function}
  */
-export function transform(transformer: (value: any, key: string, data: object) => any): Function;
+export function transform(transformer: (value: unknown, key?: string, data?: Record<string, unknown>) => unknown): Function;
