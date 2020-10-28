@@ -13,6 +13,13 @@ export interface IConfigProperty {
 }
 
 /**
+ * @name Cast
+ * @description Typecast object values to BOOLEAN, NUMERIC, INTEGER, STRING, JSON
+ * @param {object.<string, string>=} propertiesToCast
+ * @returns {Function}
+ */
+export function Cast(propertiesToCast?: Record<string, string | ECastType>): Function;
+/**
  * @name Defaults
  * @description In case of property has undefined value it will be replaced with value from configuration.
  * @param {Object.<string, *>=} propertyDefaultValues
@@ -55,6 +62,20 @@ export function Order(propertiesToStreamline?: string | string[], ...order: stri
  */
 export function Pick(propertiesToPick?: string | string[], ...pick: string[]): Function;
 /**
+ * @name Rename
+ * @description Renames properties to another name and remove original
+ * @param {object.<string, string>=} renamePropertyFromTo
+ * @returns {Function}
+ */
+export function Rename(renamePropertyFromTo?: Record<string, string>): Function;
+/**
+ * @name Replace
+ * @description Overrides object values
+ * @param {object.<string, *>=} replacePropertyValues
+ * @returns {Function}
+ */
+export function Replace(replacePropertyValues?: Record<string, any>): Function;
+/**
  * @name Required
  * @description If property defined in object - no error thrown.
  * @param {Array.<string>|string=} propertiesRequired
@@ -72,6 +93,13 @@ export function Required(
  * @returns {Function}
  */
 export function Serialize(config?: IConfig): Function;
+/**
+ * @name Transform
+ * @description Transform property values with function
+ * @param {object.<string, Function>=} propertyValuesTransformWith
+ * @returns {Function}
+ */
+export function Transform(propertyValuesTransformWith?: Record<string, Function>): Function;
 
 /**
  * @name cast

@@ -1,10 +1,14 @@
+export { Cast } from "./classes/Cast";
 export { Defaults } from "./classes/Defaults";
 export { Exclude } from "./classes/Exclude";
 export { Omit } from "./classes/Omit";
 export { Order } from "./classes/Order";
 export { Pick } from "./classes/Pick";
+export { Rename } from "./classes/Rename";
+export { Replace } from "./classes/Replace";
 export { Required } from "./classes/Required";
 export { Serialize } from "./classes/Serialize";
+export { Transform } from "./classes/Transform";
 
 export { cast } from "./functions/cast";
 export { defaults } from "./functions/defaults";

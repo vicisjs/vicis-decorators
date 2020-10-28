@@ -1,10 +1,13 @@
 const {
+  Cast,
   Defaults,
   Exclude,
   Omit,
   Order,
   Pick,
+  Rename,
   Required,
+  Replace,
   Serialize,
   cast,
   defaults,
@@ -19,6 +22,9 @@ const {
 } = require("../dist/vicis-decorators.cjs");
 
 describe("Imported functions", () => {
+  it("Cast", () => {
+    expect(typeof Cast).toBe("function");
+  });
   it("Defaults", () => {
     expect(typeof Defaults).toBe("function");
   });
@@ -33,6 +39,12 @@ describe("Imported functions", () => {
   });
   it("Pick", () => {
     expect(typeof Pick).toBe("function");
+  });
+  it("Rename", () => {
+    expect(typeof Rename).toBe("function");
+  });
+  it("Replace", () => {
+    expect(typeof Replace).toBe("function");
   });
   it("Required", () => {
     expect(typeof Required).toBe("function");
