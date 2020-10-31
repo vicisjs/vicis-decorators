@@ -1,6 +1,6 @@
-import { CONFIG } from "../const/config";
+import { CONFIG } from "../const/config.js";
 
-import { validate } from "../config/validate";
+import { validate } from "../config/validate.js";
 
 /**
  * @name serialize

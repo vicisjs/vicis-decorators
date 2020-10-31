@@ -26,7 +26,7 @@
     "babel-eslint": "10.1.0",
     "eslint": "7.12.1",
     "eslint-config-prettier": "6.15.0",
-    "eslint-plugin-jsdoc": "30.7.3",
+    "eslint-plugin-jsdoc": "30.7.5",
     "eslint-plugin-prettier": "3.1.4",
     "jest": "26.6.1",
     "npm-check": "5.9.2",
@@ -94,14 +94,14 @@
     "url": "git+https://github.com/r37r0m0d3l/vicis-decorators.git"
   },
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
-    "lint": "eslint ./src/**/*.mjs",
+    "build": "rollup --config rollup.config.js",
+    "lint": "eslint ./src/**/*.js",
     "lint:md": "remark .",
-    "package:upgrade": "npm-check --update",
+    "package:upgrade": "npx npm-check --update",
     "test": "jest",
     "test:coverage": "jest --collect-coverage"
   },
   "type": "module",
   "types": "./dist/vicis-decorators.d.ts",
-  "version": "1.2.12"
+  "version": "1.2.13"
 }

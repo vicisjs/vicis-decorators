@@ -1,9 +1,9 @@
 import { Vicis } from "vicis";
 
-import { CONFIG } from "../const/config";
-import { SERIALIZER } from "../const/serializer";
+import { CONFIG } from "../const/config.js";
+import { SERIALIZER } from "../const/serializer.js";
 
-import { getDefault } from "./getDefault";
+import { getDefault } from "./getDefault.js";
 
 /**
  * @name validate

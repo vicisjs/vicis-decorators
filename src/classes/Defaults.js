@@ -1,4 +1,4 @@
-import { Serialize } from "./Serialize";
+import { Serialize } from "./Serialize.js";
 
 /**
  * @name Defaults

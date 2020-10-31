@@ -1,4 +1,4 @@
-import { clone } from "../utils/clone";
+import { clone } from "../utils/clone.js";
 
 const vicisConfigDefault = {
   cast: {},

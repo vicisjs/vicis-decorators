@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 
-const INPUT_NAME = "index.mjs";
+const INPUT_NAME = "index.js";
 const OUTPUT_NAME = "vicis-decorators";
 const UMD_NAME = "VicisDecorators";
 

@@ -1,5 +1,5 @@
-import { Serialize } from "./Serialize";
-import { argsAsArray } from "../utils/argsAsArray";
+import { Serialize } from "./Serialize.js";
+import { argsAsArray } from "../utils/argsAsArray.js";
 
 /**
  * @name Pick

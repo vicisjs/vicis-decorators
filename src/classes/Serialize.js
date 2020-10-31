@@ -1,12 +1,12 @@
 import { Vicis } from "vicis";
 
-import { CONFIG } from "../const/config";
-import { SERIALIZER } from "../const/serializer";
+import { CONFIG } from "../const/config.js";
+import { SERIALIZER } from "../const/serializer.js";
 
-import { clone } from "../utils/clone";
-import { getDefault } from "../config/getDefault";
-import { merge } from "../utils/merge";
-import { toJSON } from "../hooks/toJSON";
+import { clone } from "../utils/clone.js";
+import { getDefault } from "../config/getDefault.js";
+import { merge } from "../utils/merge.js";
+import { toJSON } from "../hooks/toJSON.js";
 
 /**
  * @name Serialize

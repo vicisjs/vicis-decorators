@@ -1,5 +1,5 @@
-import { CONFIG } from "../const/config";
-import { SERIALIZER } from "../const/serializer";
+import { CONFIG } from "../const/config.js";
+import { SERIALIZER } from "../const/serializer.js";
 
 /**
  * @name toJSON

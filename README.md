@@ -53,6 +53,17 @@ class MyClass {
 }
 ```
 
+### Cast
+
+[Cast →](https://vicis.js.org/#/en/cast)
+
+```typescript
+@Cast({ id: Vicis.INTEGER })
+class MyClass {
+  protected id: number | string;
+}
+```
+
 ### Defaults
 
 [Defaults →](https://vicis.js.org/#/en/defaults)
@@ -157,6 +168,17 @@ class MyClass {
 }
 ```
 
+### Rename
+
+[Rename →](https://vicis.js.org/#/en/rename)
+
+```typescript
+@Rename({ _uuid: "id" })
+class MyClass {
+  protected _uuid: string;
+}
+```
+
 ### Required
 
 [Required →](https://vicis.js.org/#/en/required)
@@ -176,6 +198,28 @@ class MyClass {
   protected id: number | string;
   protected name: string;
   protected login: string;
+}
+```
+
+### Replace
+
+[Replace →](https://vicis.js.org/#/en/replace)
+
+```typescript
+@Replace({ local: false })
+class MyClass {
+  protected local: string = "yes";
+}
+```
+
+### Transform
+
+[Transform →](https://vicis.js.org/#/en/transform)
+
+```typescript
+@Transform({ date: (value) => new Date(value) })
+class MyClass {
+  protected date: string = "2025-06-15";
 }
 ```
 
