@@ -21,7 +21,8 @@ Require CommonJS.
 
 ```javascript
 const {
-  Defaults, Exclude, Omit, Order, Pick, Required, Serialize,
+  Cast, Defaults, Exclude, Omit, Order, Pick, Rename,
+  Required, Replace, Serialize, Transform,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
 } = require("@vicis/decorators");
@@ -31,7 +32,8 @@ Import as ECMAScript module.
 
 ```javascript
 import {
-  Defaults, Exclude, Omit, Order, Pick, Required, Serialize,
+  Cast, Defaults, Exclude, Omit, Order, Pick, Rename,
+  Required, Replace, Serialize, Transform,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
 } from "@vicis/decorators";
