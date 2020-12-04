@@ -28,20 +28,9 @@ export function serialize(configOfProperty) {
     Object.keys(propertyConfig).forEach((key) => {
       switch (key) {
         case "defined":
-          {
-            if (propertyConfig[key] === true) {
-              instance[CONFIG][key].push(propertyName);
-            }
-          }
-          break;
         case "exclude":
-          {
-            if (propertyConfig[key] === true) {
-              instance[CONFIG][key].push(propertyName);
-            }
-          }
-          break;
         case "omit":
+        case "required":
           {
             if (propertyConfig[key] === true) {
               instance[CONFIG][key].push(propertyName);
@@ -53,13 +42,6 @@ export function serialize(configOfProperty) {
             instance[CONFIG][key][propertyName] = propertyConfig.rename;
             instance[CONFIG]["pick"].push(propertyConfig.rename);
             instance[CONFIG]["pick"].push(propertyName);
-          }
-          break;
-        case "required":
-          {
-            if (propertyConfig[key] === true) {
-              instance[CONFIG][key].push(propertyName);
-            }
           }
           break;
         default:

@@ -8,7 +8,6 @@ JavaScript's Vicis Decorators create serializable objects without a configuratio
 
 [![npm](https://badgen.net/npm/v/@vicis/decorators?&icon=npm&label=npm&color=DD3636)](https://www.npmjs.com/package/@vicis/decorators)
 [![downloads](https://badgen.net/npm/dt/@vicis/decorators?&icon=terminal&label=downloads&color=009688)](https://www.npmjs.com/package/@vicis/decorators)
-[![stars](https://badgen.net/github/stars/r37r0m0d3l/vicis-decorators?&icon=github&label=stars&color=ffcc33)](https://github.com/r37r0m0d3l/vicis-decorators)
 [![types](https://badgen.net/npm/types/@vicis/decorators?&icon=typescript&label=types&color=1E90FF)](https://github.com/r37r0m0d3l/vicis-decorators/blob/master/dist/vicis-decorators.d.ts)
 [![build](https://badgen.net/travis/r37r0m0d3l/vicis-decorators?&icon=travis&label=build)](https://travis-ci.org/r37r0m0d3l/vicis-decorators)
 [![lgtm](https://badgen.net/lgtm/grade/g/r37r0m0d3l/vicis-decorators?&icon=lgtm&label=lgtm:js/ts&color=00C853)](https://lgtm.com/projects/g/r37r0m0d3l/vicis-decorators/alerts/)
@@ -41,7 +40,7 @@ import {
 
 ## Classes
 
-### Serialize
+### Serialize (class)
 
 [Configuration](https://vicis.js.org/#/en/configuration_object)
 
@@ -55,7 +54,7 @@ class MyClass {
 }
 ```
 
-### Cast
+### Cast (class)
 
 [Cast →](https://vicis.js.org/#/en/cast)
 
@@ -66,7 +65,7 @@ class MyClass {
 }
 ```
 
-### Defaults
+### Defaults (class)
 
 [Defaults →](https://vicis.js.org/#/en/defaults)
 
@@ -78,7 +77,7 @@ class MyClass {
 }
 ```
 
-### Exclude
+### Exclude (class)
 
 [Exclude →](https://vicis.js.org/#/en/exclude)
 
@@ -102,7 +101,7 @@ class MyClass {
 }
 ```
 
-### Omit
+### Omit (class)
 
 [Omit →](https://vicis.js.org/#/en/omit)
 
@@ -126,7 +125,7 @@ class MyClass {
 }
 ```
 
-### Order
+### Order (class)
 
 [Order →](https://vicis.js.org/#/en/order)
 
@@ -148,7 +147,7 @@ class MyClass {
 }
 ```
 
-### Pick
+### Pick (class)
 
 [Pick →](https://vicis.js.org/#/en/pick)
 
@@ -170,7 +169,7 @@ class MyClass {
 }
 ```
 
-### Rename
+### Rename (class)
 
 [Rename →](https://vicis.js.org/#/en/rename)
 
@@ -181,7 +180,7 @@ class MyClass {
 }
 ```
 
-### Required
+### Required (class)
 
 [Required →](https://vicis.js.org/#/en/required)
 
@@ -203,7 +202,7 @@ class MyClass {
 }
 ```
 
-### Replace
+### Replace (class)
 
 [Replace →](https://vicis.js.org/#/en/replace)
 
@@ -214,7 +213,7 @@ class MyClass {
 }
 ```
 
-### Transform
+### Transform (class)
 
 [Transform →](https://vicis.js.org/#/en/transform)
 
@@ -227,7 +226,7 @@ class MyClass {
 
 ## Properties
 
-### serialize
+### serialize (property)
 
 [Serialize configuration →](https://vicis.js.org/#/en/configuration_object)
 
@@ -277,7 +276,7 @@ class MyClass {
 }
 ```
 
-### cast
+### cast (property)
 
 [Cast →](https://vicis.js.org/#/en/cast)
 
@@ -290,7 +289,7 @@ class MyClass {
 }
 ```
 
-### defaults
+### defaults (property)
 
 [Defaults →](https://vicis.js.org/#/en/defaults)
 
@@ -302,7 +301,7 @@ class MyClass {
 }
 ```
 
-### defined
+### defined (property)
 
 [Defined →](https://vicis.js.org/#/en/defined)
 
@@ -314,7 +313,7 @@ class MyClass {
 }
 ```
 
-### exclude
+### exclude (property)
 
 [Exclude →](https://vicis.js.org/#/en/exclude)
 
@@ -326,7 +325,7 @@ class MyClass {
 }
 ```
 
-### omit
+### omit (property)
 
 [Omit →](https://vicis.js.org/#/en/omit)
 
@@ -338,7 +337,7 @@ class MyClass {
 }
 ```
 
-### pick
+### pick (property)
 
 [Pick →](https://vicis.js.org/#/en/pick)
 
@@ -350,7 +349,7 @@ class MyClass {
 }
 ```
 
-### rename
+### rename (property)
 
 [Rename →](https://vicis.js.org/#/en/rename)
 
@@ -362,7 +361,7 @@ class MyClass {
 }
 ```
 
-### replace
+### replace (property)
 
 [Replace →](https://vicis.js.org/#/en/replace)
 
@@ -374,7 +373,7 @@ class MyClass {
 }
 ```
 
-### required
+### required (property)
 
 [Required →](https://vicis.js.org/#/en/required)
 
@@ -386,7 +385,7 @@ class MyClass {
 }
 ```
 
-### transform
+### transform (property)
 
 [Transform →](https://vicis.js.org/#/en/transform)
 
@@ -402,8 +401,8 @@ class MyClass {
 
 ## See also
 
-[My other projects](https://r37r0m0d3l.icu/open_source_map)
+[My Other Projects](https://r37r0m0d3l.icu/open_source_map)
 
-<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;">
+<img src="https://raw.githubusercontent.com/r37r0m0d3l/r37r0m0d3l/master/osmap.svg?sanitize=true" width="960" height="520" style="display:block;height:auto;margin-left:auto;margin-right:auto;min-height:520px;min-width:960px;width:100%;" alt="r37r0m0d3l open source projects">
 
 ---

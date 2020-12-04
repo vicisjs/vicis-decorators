@@ -7,7 +7,7 @@ import { SERIALIZER } from "../const/serializer.js";
  * @returns {any}
  */
 export function toJSON() {
-  const asJSON = new Object(null);
+  const asJSON = {};
   const propertiesToSerialize = Array.from(new Set(this[CONFIG].pick));
   propertiesToSerialize.forEach((propertyName) => {
     asJSON[propertyName] = this[propertyName];
