@@ -2,6 +2,7 @@ const {
   Cast,
   Defaults,
   Exclude,
+  Nullish,
   Omit,
   Order,
   Pick,
@@ -13,6 +14,7 @@ const {
   defaults,
   defined,
   exclude,
+  nullish,
   omit,
   pick,
   rename,
@@ -30,6 +32,9 @@ describe("Imported functions", () => {
   });
   it("Exclude", () => {
     expect(typeof Exclude).toBe("function");
+  });
+  it("Nullish", () => {
+    expect(typeof Nullish).toBe("function");
   });
   it("Omit", () => {
     expect(typeof Omit).toBe("function");
@@ -63,6 +68,9 @@ describe("Imported functions", () => {
   });
   it("exclude", () => {
     expect(typeof exclude).toBe("function");
+  });
+  it("nullish", () => {
+    expect(typeof nullish).toBe("function");
   });
   it("omit", () => {
     expect(typeof omit).toBe("function");

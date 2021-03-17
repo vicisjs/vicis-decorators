@@ -20,7 +20,7 @@ Require CommonJS.
 
 ```javascript
 const {
-  Cast, Defaults, Exclude, Omit, Order, Pick, Rename,
+  Cast, Defaults, Exclude, Nullish, Omit, Order, Pick, Rename,
   Required, Replace, Serialize, Transform,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
@@ -31,7 +31,7 @@ Import as ECMAScript module.
 
 ```javascript
 import {
-  Cast, Defaults, Exclude, Omit, Order, Pick, Rename,
+  Cast, Defaults, Exclude, Nullish, Omit, Order, Pick, Rename,
   Required, Replace, Serialize, Transform,
   cast, defaults, defined, exclude, omit, rename,
   replace, serializable, serialize, transform,
@@ -98,6 +98,18 @@ class MyClass {
   protected login: string;
   protected password: string;
   protected email: string;
+}
+```
+
+### Nullish (class)
+
+[Nullish →](https://vicis.js.org/#/en/nullish)
+
+```typescript
+@Nullish({ active: null })
+class MyClass {
+  protected id: number | string;
+  protected login: string;
 }
 ```
 
@@ -322,6 +334,18 @@ class MyClass {
 class MyClass {
   @exclude
   protected password: string;
+}
+```
+
+### nullish (property)
+
+[Nullish →](https://vicis.js.org/#/en/nullish)
+
+```typescript
+@Serialize()
+class MyClass {
+  @nullish("ok")
+  protected active: any;
 }
 ```
 

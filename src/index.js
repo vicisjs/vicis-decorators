@@ -1,6 +1,7 @@
 export { Cast } from "./classes/Cast.js";
 export { Defaults } from "./classes/Defaults.js";
 export { Exclude } from "./classes/Exclude.js";
+export { Nullish } from "./classes/Nullish.js";
 export { Omit } from "./classes/Omit.js";
 export { Order } from "./classes/Order.js";
 export { Pick } from "./classes/Pick.js";
@@ -14,6 +15,7 @@ export { cast } from "./functions/cast.js";
 export { defaults } from "./functions/defaults.js";
 export { defined } from "./functions/defined.js";
 export { exclude } from "./functions/exclude.js";
+export { nullish } from "./functions/nullish.js";
 export { omit } from "./functions/omit.js";
 export { pick } from "./functions/pick.js";
 export { rename } from "./functions/rename.js";

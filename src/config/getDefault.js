@@ -5,6 +5,7 @@ const vicisConfigDefault = {
   defaults: {},
   defined: [],
   exclude: [],
+  nullish: {},
   omit: [],
   order: [],
   pick: [],

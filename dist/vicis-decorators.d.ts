@@ -5,6 +5,7 @@ export interface IConfigProperty {
   defaults?: unknown;
   defined?: boolean;
   exclude?: boolean;
+  nullish?: unknown;
   omit?: boolean;
   rename?: string;
   replace?: unknown;
@@ -37,6 +38,13 @@ export function Exclude(
   propertiesToExclude: string | RegExp | Array<string | RegExp>,
   ...exclude: Array<string | RegExp>
 ): Function;
+/**
+ * @name Nullish
+ * @description In case of property has undefined or null value it will be replaced with value from configuration.
+ * @param {Object.<string, *>=} propertyNullishValues
+ * @returns {Function}
+ */
+export function Nullish(propertyNullishValues?: Record<string, unknown>): Function;
 /**
  * @name Omit
  * @description Remove from object listed properties.
@@ -131,6 +139,13 @@ export function defined(instance: Object, propertyName: string): any;
  * @returns {void}
  */
 export function exclude(instance: Object, propertyName: string): any;
+/**
+ * @name nullish
+ * @description In case of property has undefined or null value it will be replaced with value from configuration
+ * @param {*} value
+ * @returns {Function}
+ */
+export function nullish(value: unknown): Function;
 /**
  * @name omit
  * @description Remove property from object. Applies before all other transformations.
