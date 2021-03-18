@@ -9,7 +9,7 @@ JavaScript's Vicis Decorators create serializable objects without a configuratio
 [![npm](https://badgen.net/npm/v/@vicis/decorators?&icon=npm&label=npm&color=DD3636)](https://www.npmjs.com/package/@vicis/decorators)
 [![downloads](https://badgen.net/npm/dt/@vicis/decorators?&icon=terminal&label=downloads&color=009688)](https://www.npmjs.com/package/@vicis/decorators)
 [![types](https://badgen.net/npm/types/@vicis/decorators?&icon=typescript&label=types&color=1E90FF)](https://github.com/r37r0m0d3l/vicis-decorators/blob/master/dist/vicis-decorators.d.ts)
-[![build](https://badgen.net/travis/r37r0m0d3l/vicis-decorators?&label=build)](https://travis-ci.org/r37r0m0d3l/vicis-decorators)
+[![build](https://badgen.net/travis/vicisjs/vicis-decorators?&label=build)](https://travis-ci.com/github/vicisjs/vicis-decorators)
 [![lgtm](https://badgen.net/lgtm/grade/g/r37r0m0d3l/vicis-decorators?&icon=lgtm&label=lgtm:js/ts&color=00C853)](https://lgtm.com/projects/g/r37r0m0d3l/vicis-decorators/alerts/)
 
 ---
