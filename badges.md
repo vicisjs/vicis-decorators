@@ -49,6 +49,6 @@
 
 #### Travis CI
 
-[![Build Status](https://badgen.net/travis/r37r0m0d3l/vicis-decorators)](https://travis-ci.org/r37r0m0d3l/vicis-decorators)
+[![Build Status](https://badgen.net/travis/vicisjs/vicis-decorators)](https://travis-ci.com/vicisjs/vicis-decorators)
 
-[![Build Status](https://travis-ci.org/r37r0m0d3l/vicis-decorators.svg?branch=master)](https://travis-ci.org/r37r0m0d3l/vicis-decorators)
+[![Build Status](https://travis-ci.com/vicisjs/vicis-decorators.svg?branch=master)](https://travis-ci.com/vicisjs/vicis-decorators)
